@@ -1,4 +1,4 @@
-# Title: Scheduling Application
+# Scheduling Application
 Purpose: To provide a scheduling tool for a consulting organization that conducts business in multiple languages and regions.
 Author: Luke Penner
 Date: 4 July 2022
