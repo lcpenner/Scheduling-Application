@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsController">
+   <children>
+      <Label alignment="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="27.0" prefWidth="303.0" text="Scheduling Application">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="149.0" layoutY="41.0" prefHeight="27.0" prefWidth="303.0" text="Reports" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="8.0" layoutY="361.0" maxWidth="177.0" mnemonicParsing="false" onAction="#onActionMainMenu" prefWidth="177.0" text="Return to Main Menu" />
+      <TabPane layoutY="89.0" prefHeight="266.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Appointments by Contact">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="606.0">
+                     <children>
+                        <ComboBox fx:id="contactCombo" layoutX="8.0" layoutY="2.0" onAction="#onActionSelectContact" prefWidth="150.0" promptText="Select Contact" />
+                        <TableView fx:id="reportsAppointmentTableview" layoutX="8.0" layoutY="44.0" prefHeight="193.0" prefWidth="592.0">
+                          <columns>
+                            <TableColumn fx:id="reportApptIdCol" prefWidth="58.0" text="Appt ID" />
+                            <TableColumn fx:id="reportTitleCol" prefWidth="74.0" text="Title" />
+                              <TableColumn fx:id="reportApptTypeCol" prefWidth="64.0" text="Type" />
+                              <TableColumn fx:id="reportDescriptionCol" prefWidth="93.0" text="Description" />
+                              <TableColumn fx:id="reportStartCol" prefWidth="118.0" text="Start" />
+                              <TableColumn fx:id="reportEndCol" prefWidth="107.0" text="End" />
+                              <TableColumn fx:id="reportApptCustIdCol" prefWidth="77.0" text="Customer ID" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Total Appointments by Type and Month">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="reportsTypeTableview" layoutX="27.0" layoutY="19.0" prefHeight="200.0" prefWidth="231.0">
+                          <columns>
+                            <TableColumn fx:id="reportTypeTotalCol" prefWidth="110.0" text="Type" />
+                            <TableColumn fx:id="reportTypeTotalApptsCol" prefWidth="120.0" text="Total Appointments" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="reportsMonthTableview" layoutX="371.0" layoutY="19.0" prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn fx:id="reportMonthTotalCol" prefWidth="79.0" text="Month" />
+                              <TableColumn fx:id="reportMonthTotalApptsCol" prefWidth="120.0" text="Total Appointments" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Total Appointments by Customer">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="reportsCustomerTableview" layoutX="48.0" layoutY="19.0" prefHeight="200.0" prefWidth="487.0">
+                           <columns>
+                              <TableColumn fx:id="customerIdTotalCol" prefWidth="93.0" text="Customer ID" />
+                              <TableColumn fx:id="customerTotalCol" minWidth="0.0" prefWidth="248.0" text="Customer Name" />
+                              <TableColumn fx:id="customerTotalApptsCol" minWidth="0.0" prefWidth="145.0" text="Total Appointments" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
